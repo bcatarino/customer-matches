@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/customer/{customerId}")
@@ -18,7 +18,7 @@ public class CustomerController {
 
     @RequestMapping("/matches")
     @ResponseBody
-    public List<Match> getCustomerMatches(@PathVariable("customerId") String customerId) {
+    public Set<Match> getCustomerMatches(@PathVariable("customerId") String customerId) {
         return licensingService.getLicensedMatches(customerId);
     }
 }
