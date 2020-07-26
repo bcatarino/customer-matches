@@ -15,5 +15,4 @@ class CustomerMatchesApplicationTests {
 	void contextLoads() {
 		Assertions.assertThat(customerMatchesController).isNotNull();
 	}
-
 }
