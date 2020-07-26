@@ -73,7 +73,7 @@ public class LicensingServiceTest {
         assertThat(licensedMatches).isEqualTo(Set.of());
 
         verify(matchRepository, never()).getMatchesFor(any());
-        verify(tournamentRepository, never()).getMatcheIdsForTournaments(any());
+        verify(tournamentRepository, never()).getMatchesIdsForTournaments(any());
     }
 
     @Test
@@ -107,7 +107,7 @@ public class LicensingServiceTest {
         Set<Match> licensedMatches = licensingService.getLicensedMatches(customerId.toString());
         assertThat(licensedMatches).isEqualTo(customerMatches);
 
-        verify(tournamentRepository, never()).getMatcheIdsForTournaments(any());
+        verify(tournamentRepository, never()).getMatchesIdsForTournaments(any());
     }
 
     @Test
@@ -127,7 +127,7 @@ public class LicensingServiceTest {
         Set<UUID> matchIds = customerMatches.stream().map(Match::getMatchId).collect(Collectors.toSet());
 
         when(licenseRepository.getCustomerLicenses(customerId)).thenReturn(customerLicenses);
-        when(tournamentRepository.getMatcheIdsForTournaments(Set.of(tournamendId))).thenReturn(matchIds);
+        when(tournamentRepository.getMatchesIdsForTournaments(Set.of(tournamendId))).thenReturn(matchIds);
         when(matchRepository.getMatchesFor(matchIds)).thenReturn(customerMatches);
 
         Set<Match> licensedMatches = licensingService.getLicensedMatches(customerId.toString());
@@ -156,7 +156,7 @@ public class LicensingServiceTest {
         Set<UUID> matchIds = customerMatches.stream().map(Match::getMatchId).collect(Collectors.toSet());
 
         when(licenseRepository.getCustomerLicenses(customerId)).thenReturn(customerLicenses);
-        when(tournamentRepository.getMatcheIdsForTournaments(Set.of(tournamendId))).thenReturn(matchIds);
+        when(tournamentRepository.getMatchesIdsForTournaments(Set.of(tournamendId))).thenReturn(matchIds);
         when(matchRepository.getMatchesFor(matchIds)).thenReturn(customerMatches);
 
         Set<Match> licensedMatches = licensingService.getLicensedMatches(customerId.toString());

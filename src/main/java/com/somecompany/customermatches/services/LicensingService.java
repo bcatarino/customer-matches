@@ -39,7 +39,7 @@ public class LicensingService {
     private Set<UUID> getMatchIdsForCustomerTournaments(Set<CustomerLicense> customerLicenses) {
         Set<UUID> tournamentIds = filterByType(customerLicenses, LicenseType.TOURNAMENT);
         return !tournamentIds.isEmpty()
-                ? tournamentRepository.getMatcheIdsForTournaments(tournamentIds)
+                ? tournamentRepository.getMatchesIdsForTournaments(tournamentIds)
                 : Set.of();
     }
 

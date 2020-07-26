@@ -16,6 +16,18 @@ Allows customers to get a list of their licensed matches
 
 Server will be started on http://localhost:8080/
 
+### Test Data
+
+Because the service is not connecting to a database, a set of mock data is provided.
+
+You can test the service using
+
+`http://localhost:8080/customer/f411c4e7-1278-4fa3-8ab9-e8c264e12952/matches`
+
+or
+
+`http://localhost:8080/customer/cfa89770-72df-4673-b7d7-abe5aaa3c308/matches`
+
 ## Assumptions
 
 - The goal is to model the problem and present a solution, not including the data layer, so I'm not implementing any type of persistence. But for this particular problem, I'd probably choose a relational database.

@@ -4,5 +4,5 @@ import java.util.Set;
 import java.util.UUID;
 
 public interface TournamentRepository {
-    Set<UUID> getMatcheIdsForTournaments(Set<UUID> tournamentIds);
+    Set<UUID> getMatchesIdsForTournaments(Set<UUID> tournamentIds);
 }
