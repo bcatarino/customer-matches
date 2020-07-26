@@ -27,3 +27,4 @@ Server will be started on http://localhost:8080/
 - Could verify if the customer exists and returns 404 if it doesn't.
 - Could return a proper http code when the customer exists but has no license.
 - Implement authorization so that only allowed users could access their data.
+- Could probably create some sort of inheritance model for content that could be reused, but considering we only have 2 types, it felt over-engineering to do it now.

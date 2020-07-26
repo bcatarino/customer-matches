@@ -12,7 +12,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import java.util.List;
 import java.util.Set;
 
 import static com.somecompany.customermatches.testobjects.TestMatches.MATCH_FEDERER_DJOKOVIC_TOMORROW;
@@ -60,7 +59,7 @@ public class CustomerControllerTest {
                 .andExpect(jsonPath("$").isNotEmpty())
                 .andReturn();
 
-        assertThat(jsonMapper.readValue(result.getResponse().getContentAsString(), new TypeReference<List<Match>>(){}))
+        assertThat(jsonMapper.readValue(result.getResponse().getContentAsString(), new TypeReference<Set<Match>>(){}))
                 .isEqualTo(matches);
     }
 }
